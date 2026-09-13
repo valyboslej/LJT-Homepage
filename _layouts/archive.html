@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div id="main" role="main">
+  {% include author-profile.html %}
+  <article class="page">
+    <div class="page__inner-wrap">
+      <header>
+        <h1 id="page-title" class="page__title">{{ page.title }}</h1>
+      </header>
+      <section class="page__content">
+        {{ content }}
+        {% if site.author.googlescholar %}<p class="wordwrap">You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.</p>{% endif %}
+        <div class="publications-list">
+        {% for post in site.publications reversed %}
+          {% include archive-single.html %}
+        {% endfor %}
+        </div>
+      </section>
+    </div>
+  </article>
+</div>
