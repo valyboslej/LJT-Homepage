@@ -1,0 +1,15 @@
+{% if page.author_profile or layout.author_profile %}
+<aside class="author-profile" itemscope itemtype="https://schema.org/Person">
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">{{ site.author.name }}</h3>
+    {% if site.author.bio %}<p class="author__bio" itemprop="description">{{ site.author.bio }}</p>{% endif %}
+  </div>
+  <ul class="author__urls social-icons">
+    {% if site.author.employer %}<li><i class="fas fa-fw fa-university" aria-hidden="true"></i> <span>{{ site.author.employer }}</span></li>{% endif %}
+    {% if site.author.email %}<li><a href="mailto:{{ site.author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> <span>Email</span></a></li>{% endif %}
+    {% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}" rel="noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> <span>GitHub</span></a></li>{% endif %}
+    {% if site.author.googlescholar %}<li><a href="{{ site.author.googlescholar }}" rel="noopener noreferrer"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i> <span>Google Scholar</span></a></li>{% endif %}
+    {% if site.author.twitter %}<li><a href="https://twitter.com/{{ site.author.twitter }}" rel="noopener noreferrer"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Twitter</span></a></li>{% endif %}
+  </ul>
+</aside>
+{% endif %}

@@ -1,0 +1,11 @@
+<div class="publication-item">
+  <h3 class="publication-title">
+    {% if post.paperurl %}<a href="{{ post.paperurl }}">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}
+  </h3>
+  <p class="publication-meta">
+    {% if post.venue %}<span class="publication-venue">{{ post.venue }}</span>{% endif %}
+    {% if post.date %}<span class="publication-date">{{ post.date | date: "%Y" }}</span>{% endif %}
+  </p>
+  {% if post.citation %}<p class="publication-citation">{{ post.citation }}</p>{% endif %}
+  {% if post.excerpt %}<p class="publication-excerpt">{{ post.excerpt }}</p>{% endif %}
+</div>
